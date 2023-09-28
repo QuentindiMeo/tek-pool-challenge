@@ -1,14 +1,14 @@
 ##
 ## EPITECH POOL CHALLENGE, 2023
-## revstr makefile
+## str_isalpha makefile
 ##
 
-SRC	=	revstr.c
+SRC	=	str_isalpha.c
 
 OBJ	=	$(SRC:.c=.o)
 COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
 
-NAME	=	revstr.bin
+NAME	=	str_isalpha.bin
 TESTNAME=	test.bin
 TESTFILE=	tests.c
 CRITERIONPATH=	../../criterion/

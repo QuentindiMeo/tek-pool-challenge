@@ -34,7 +34,7 @@ re:	fclean all
 test:
 	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
 
-run:	test
+run:	fclean test
 	@./$(TESTNAME) --verbose
 runc:	run
 	@gcovr --exclude tests.c --exclude-unreachable-branches --sort-uncovered --print-summary
