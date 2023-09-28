@@ -1,0 +1,11 @@
+*.txt
+
+*.o
+*.gc*
+
+*.bin
+
+*.vg*
+*.ls*
+
+superbackup/

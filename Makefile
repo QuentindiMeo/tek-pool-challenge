@@ -1,5 +1,5 @@
 ##
-## EPITECH CHALLENGE, 2023
+## EPITECH POOL CHALLENGE, 2023
 ## general makefile
 ##
 
@@ -7,10 +7,11 @@ SRC	=	$(shell find . -name "*.c" ! -path "*test*.c")
 OBJ	=	$(SRC:.c=.o)
 COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno)
 
-NAME	=	$(shell basename $(shell pwd))
+NAME	=	superlib.a
 
-TESTNAME=	TEST
-TESTFILE=	tests.c
+TESTNAME=	SUPERtest.bin
+TESTFILE=	supertests.c
+CRITERIONPATH=	../../criterion/
 
 all:	$(NAME)
 
@@ -31,7 +32,7 @@ fclean: clean
 re:	fclean all
 
 test:
-	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -lcriterion
+	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
 
 run:	test
 	@./$(TESTNAME)

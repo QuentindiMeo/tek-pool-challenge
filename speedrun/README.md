@@ -4,7 +4,7 @@ So you're up for a challenge, huh?
 
 Tools like [LiveSplit](https://github.com/LiveSplit) can help you monitor your progress.  
 Find in this folder a [splits file](./challenge.lss) for LiveSplit, as well as a [suggested layout](./challenge.lsl) for the timer.  
-You may note that my personal favourite type of run is the **200% nWAVICO**.
+You may note that my personal favourite type of run is the **200% nWAVICO full coverage**.
 
 ---
 
@@ -25,6 +25,7 @@ I may also suggest difficulty modifiers:
     - **nS**: No Stack. Complete the exercises without using the stack (no local variables, no recursion, etc.).
     - **nL**: No Loop. Complete the exercises without using any loop (no `for`, `while`, `do`). Full recursion mode.
   - **nV**: No Valgrind. Complete the exercises without any help from Valgrind.
+  - **full coverage**: Complete the exercises while getting a perfect coverage score (100%). Run `make cov` to check your coverage using `gcov`.
 
 - Difficulty reducers:
   - **nO**: No Order. Complete the exercises in any order you want.
