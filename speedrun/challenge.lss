@@ -15,20 +15,7 @@
   </Metadata>
   <Offset>00:00:00</Offset>
   <AttemptCount>0</AttemptCount>
-  <AttemptHistory>
-    <Attempt id="1" started="10/08/2020 23:54:52" isStartedSynced="True" ended="10/09/2020 00:13:25" isEndedSynced="True" />
-    <Attempt id="2" started="10/09/2020 00:13:58" isStartedSynced="True" ended="10/09/2020 00:19:18" isEndedSynced="True" />
-    <Attempt id="3" started="10/09/2020 00:19:28" isStartedSynced="True" ended="10/09/2020 00:28:59" isEndedSynced="True" />
-    <Attempt id="4" started="10/09/2020 00:29:09" isStartedSynced="True" ended="10/09/2020 01:37:41" isEndedSynced="True">
-      <RealTime>01:07:36.0330000</RealTime>
-      <PauseTime>00:00:55.8020000</PauseTime>
-    </Attempt>
-    <Attempt id="5" started="07/28/2021 02:27:07" isStartedSynced="True" ended="07/28/2021 02:54:49" isEndedSynced="True" />
-    <Attempt id="6" started="07/29/2021 18:59:10" isStartedSynced="False" ended="07/29/2021 19:09:13" isEndedSynced="True" />
-    <Attempt id="7" started="07/31/2021 01:07:36" isStartedSynced="False" ended="07/31/2021 01:39:11" isEndedSynced="True">
-      <RealTime>00:31:34.7940000</RealTime>
-    </Attempt>
-  </AttemptHistory>
+  <AttemptHistory />
   <Segments>
     <Segment>
       <Name>putchar</Name>

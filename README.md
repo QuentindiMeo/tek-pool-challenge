@@ -32,8 +32,8 @@ Criterion tests for each exercise are run with the command `make run`.
 ## Exercises
 
 The 30 exercises are located in `/exercises/`, ready to code with (fake) headers and expectations are listed as comments.  
-The exercises are to be completed with most library functions prohibited; specification are listed above each prototype. Needed includes are already in the headers.  
-You may notice that the exercises are not all equal in difficulty, so you may want to practice them individually before attempting a full run.
+The exercises are to be completed with most library functions prohibited; specification are listed above each prototype.
+Needed includes are already in the headers. You may **open an issue** if some of them are missing.
 
 ---
 
@@ -41,4 +41,5 @@ You may notice that the exercises are not all equal in difficulty, so you may wa
 
 Not gonna lie, using Copilot to generate the code is cheating. It pretty much defeats the purpose of the challenge in one TAB hit.  
 Feel free to turn this into a speedrun, using tools like [LiveSplit](https://github.com/LiveSplit).  
-Find more tips or recommendations in `/speedrun/`.
+You may notice that the exercises are not all equal in difficulty, so you may want to practice them individually before attempting a full run.  
+Find more tips and recommendations [**here**](/speedrun/).

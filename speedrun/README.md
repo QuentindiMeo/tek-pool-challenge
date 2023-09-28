@@ -8,13 +8,15 @@ You may note that my personal favourite type of run is the **111% nWAVICO full c
 
 ---
 
-I may suggest various types of runs:
+## Run types
 
 - **Any%**: Complete all the exercises as fast as possible, using any means necessary (no peer programming allowed).
 - **101%**: ^, but also while getting a perfect Valgrind score (no memory leaks, no errors).
 - **111%**: ^, but also while respecting the [EPITECH coding style]. Use `make norm` to check your code using my Ruby script.
 
-I may also suggest difficulty modifiers:
+---
+
+## Difficulty modifiers
 
 - Difficulty amplifiers:
   - **nW**: No Warning. Complete the exercises without leaving any compilation warnings behind (while using `-Wall -Wextra`; `-Werror` is therefore recommended).
@@ -31,6 +33,8 @@ I may also suggest difficulty modifiers:
   - **nO**: No Order. Complete the exercises in any order you want.
   - **nM**: No Music. Complete the exercises without any music. Full ASMR mode.
   - **nT**: No Timer. Complete the exercises without any timer. Full Zen mode. But if you're not using a timer, you're not speedrunning, are you?
+
+---
 
 You may **open an issue** if my norm script is not working properly.  
 You may **open an issue** if you want to suggest a new type of run.  
