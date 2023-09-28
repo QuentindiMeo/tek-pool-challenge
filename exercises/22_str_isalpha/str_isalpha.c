@@ -16,12 +16,5 @@
  */
 bool str_isalpha(const char *str)
 {
-    if (str == NULL)
-        return (false);
-    if (str[0] == '\0')
-        return (false);
-    for (size_t i = 0; str[i] != '\0'; i++)
-        if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
-            return (false);
-    return (true);
+    return false;
 }

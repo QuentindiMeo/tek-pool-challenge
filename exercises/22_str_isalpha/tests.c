@@ -8,12 +8,6 @@
 
 bool str_isalpha(const char *str);
 
-void redirect_all_stdout(void)
-{
-    cr_redirect_stdout();
-    cr_redirect_stderr();
-}
-
 Test(str_isalpha, test_00)
 {
     bool result = str_isalpha("Hello World");
@@ -53,7 +47,7 @@ Test(str_isalpha, test_empty)
 {
     bool result = str_isalpha("");
 
-    cr_assert_eq(result, false, "Expected: %s, got: %s", "false", result ? "true" : "false");
+    cr_assert_eq(result, true, "Expected: %s, got: %s", "true", result ? "true" : "false");
 }
 
 Test(str_isalpha, test_null)

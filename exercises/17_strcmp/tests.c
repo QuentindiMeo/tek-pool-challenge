@@ -14,7 +14,7 @@ void redirect_all_stdout(void)
     cr_redirect_stderr();
 }
 
-Test(strcmp, test_hello_world, .init = redirect_all_stdout)
+Test(strcmp, test_hello_world)
 {
     char s1[] = "Hello World!";
     char s2[] = "Hello World!";
@@ -23,7 +23,7 @@ Test(strcmp, test_hello_world, .init = redirect_all_stdout)
     cr_assert_eq(result, 0, "Expected: 0\nGot: %d\n", result);
 }
 
-Test(strcmp, test_hello_world2, .init = redirect_all_stdout)
+Test(strcmp, test_hello_world2)
 {
     char s1[] = "Hello World!";
     char s2[] = "Hello World";
@@ -32,7 +32,7 @@ Test(strcmp, test_hello_world2, .init = redirect_all_stdout)
     cr_assert_eq(result, 33, "Expected: 33\nGot: %d\n", result);
 }
 
-Test(strcmp, test_hello_world3, .init = redirect_all_stdout)
+Test(strcmp, test_hello_world3)
 {
     char s1[] = "Hello World";
     char s2[] = "Hello World!";
@@ -41,7 +41,7 @@ Test(strcmp, test_hello_world3, .init = redirect_all_stdout)
     cr_assert_eq(result, -33, "Expected: -33\nGot: %d\n", result);
 }
 
-Test(strcmp, test_hello_world4, .init = redirect_all_stdout)
+Test(strcmp, test_hello_world4)
 {
     char s1[] = "Hello World!";
     char s2[] = "Hello World!!";
@@ -50,7 +50,7 @@ Test(strcmp, test_hello_world4, .init = redirect_all_stdout)
     cr_assert_eq(result, -33, "Expected: -33\nGot: %d\n", result);
 }
 
-Test(strcmp, test_hello_world5, .init = redirect_all_stdout)
+Test(strcmp, test_hello_world5)
 {
     char s1[] = "Hello World!!";
     char s2[] = "Hello World!";
@@ -59,7 +59,7 @@ Test(strcmp, test_hello_world5, .init = redirect_all_stdout)
     cr_assert_eq(result, 33, "Expected: 33\nGot: %d\n", result);
 }
 
-Test(strcmp, test_nb1, .init = redirect_all_stdout)
+Test(strcmp, test_nb1)
 {
     char s1[] = "Hello";
     char s2[] = "Hello1";
@@ -68,7 +68,7 @@ Test(strcmp, test_nb1, .init = redirect_all_stdout)
     cr_assert_eq(result, -49, "Expected: -49\nGot: %d\n", result);
 }
 
-Test(strcmp, test_nb2, .init = redirect_all_stdout)
+Test(strcmp, test_nb2)
 {
     char s1[] = "Hello1";
     char s2[] = "Hello";
@@ -77,7 +77,7 @@ Test(strcmp, test_nb2, .init = redirect_all_stdout)
     cr_assert_eq(result, 49, "Expected: 49\nGot: %d\n", result);
 }
 
-Test(strcmp, test_nb3, .init = redirect_all_stdout)
+Test(strcmp, test_nb3)
 {
     char s1[] = "Hello1";
     char s2[] = "Hello2";
@@ -86,7 +86,7 @@ Test(strcmp, test_nb3, .init = redirect_all_stdout)
     cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
 }
 
-Test(strcmp, test_nb4, .init = redirect_all_stdout)
+Test(strcmp, test_nb4)
 {
     char s1[] = "Hello9";
     char s2[] = "Hello2";
@@ -95,7 +95,7 @@ Test(strcmp, test_nb4, .init = redirect_all_stdout)
     cr_assert_eq(result, 7, "Expected: 7\nGot: %d\n", result);
 }
 
-Test(strcmp, test_null_s1, .init = redirect_all_stdout)
+Test(strcmp, test_null_s1)
 {
     char *s1 = NULL;
     char s2[] = "Hello";
@@ -104,7 +104,7 @@ Test(strcmp, test_null_s1, .init = redirect_all_stdout)
     cr_assert_eq(result, -72, "Expected: -72\nGot: %d\n", result);
 }
 
-Test(strcmp, test_null_s2, .init = redirect_all_stdout)
+Test(strcmp, test_null_s2)
 {
     char s1[] = "Hello";
     char *s2 = NULL;
@@ -113,7 +113,7 @@ Test(strcmp, test_null_s2, .init = redirect_all_stdout)
     cr_assert_eq(result, 72, "Expected: 72\nGot: %d\n", result);
 }
 
-Test(strcmp, test_null_both, .init = redirect_all_stdout)
+Test(strcmp, test_null_both)
 {
     char *s1 = NULL;
     char *s2 = NULL;
@@ -122,7 +122,7 @@ Test(strcmp, test_null_both, .init = redirect_all_stdout)
     cr_assert_eq(result, 0, "Expected: 0\nGot: %d\n", result);
 }
 
-Test(strcmp, test_empty_s1, .init = redirect_all_stdout)
+Test(strcmp, test_empty_s1)
 {
     char s1[] = "";
     char s2[] = "World";
@@ -131,7 +131,7 @@ Test(strcmp, test_empty_s1, .init = redirect_all_stdout)
     cr_assert_eq(result, -87, "Expected: -87\nGot: %d\n", result);
 }
 
-Test(strcmp, test_empty_s2, .init = redirect_all_stdout)
+Test(strcmp, test_empty_s2)
 {
     char s1[] = "World";
     char s2[] = "";

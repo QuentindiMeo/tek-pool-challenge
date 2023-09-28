@@ -8,13 +8,7 @@
 
 void my_swap(int *a, int *b);
 
-void redirect_all_stdout(void)
-{
-    cr_redirect_stdout();
-    cr_redirect_stderr();
-}
-
-Test(my_swap, test_00, .init = redirect_all_stdout)
+Test(my_swap, test_00)
 {
     int a = 42;
     int b = 21;
@@ -24,7 +18,7 @@ Test(my_swap, test_00, .init = redirect_all_stdout)
     cr_assert_eq(b, 42, "Expected 42, got %d", b);
 }
 
-Test(my_swap, test_01, .init = redirect_all_stdout)
+Test(my_swap, test_01)
 {
     int a = 0;
     int b = 0;
@@ -34,7 +28,7 @@ Test(my_swap, test_01, .init = redirect_all_stdout)
     cr_assert_eq(b, 0, "Expected 0, got %d", b);
 }
 
-Test(my_swap, test_02, .init = redirect_all_stdout)
+Test(my_swap, test_02)
 {
     int a = 42;
     int b = 42;
@@ -44,7 +38,7 @@ Test(my_swap, test_02, .init = redirect_all_stdout)
     cr_assert_eq(b, 42, "Expected 42, got %d", b);
 }
 
-Test(my_swap, test_03, .init = redirect_all_stdout)
+Test(my_swap, test_03)
 {
     int a = 42;
     int b = -21;
@@ -54,7 +48,7 @@ Test(my_swap, test_03, .init = redirect_all_stdout)
     cr_assert_eq(b, 42, "Expected 42, got %d", b);
 }
 
-Test(my_swap, test_04, .init = redirect_all_stdout)
+Test(my_swap, test_04)
 {
     int a = -42;
     int b = 21;
@@ -64,7 +58,7 @@ Test(my_swap, test_04, .init = redirect_all_stdout)
     cr_assert_eq(b, -42, "Expected -42, got %d", b);
 }
 
-Test(my_swap, test_05, .init = redirect_all_stdout)
+Test(my_swap, test_05)
 {
     int a = -42;
     int b = -21;

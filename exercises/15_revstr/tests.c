@@ -8,13 +8,7 @@
 
 char *my_revstr(char *str);
 
-void redirect_all_stdout(void)
-{
-    cr_redirect_stdout();
-    cr_redirect_stderr();
-}
-
-Test(revstr, test_hello_world, .init = redirect_all_stdout)
+Test(revstr, test_hello_world)
 {
     char str[] = "Hello World!";
 
@@ -22,7 +16,7 @@ Test(revstr, test_hello_world, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "!dlroW olleH", "Expected: !dlroW olleH\nGot: %s\n", str);
 }
 
-Test(revstr, test_empty, .init = redirect_all_stdout)
+Test(revstr, test_empty)
 {
     char str[] = "";
 
@@ -30,7 +24,7 @@ Test(revstr, test_empty, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "", "Expected: \nGot: %s\n", str);
 }
 
-Test(revstr, test_one_char, .init = redirect_all_stdout)
+Test(revstr, test_one_char)
 {
     char str[] = "a";
 
@@ -38,7 +32,7 @@ Test(revstr, test_one_char, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "a", "Expected: a\nGot: %s\n", str);
 }
 
-Test(revstr, test_two_chars, .init = redirect_all_stdout)
+Test(revstr, test_two_chars)
 {
     char str[] = "ab";
 
@@ -46,7 +40,7 @@ Test(revstr, test_two_chars, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "ba", "Expected: ba\nGot: %s\n", str);
 }
 
-Test(revstr, test_alphabet, .init = redirect_all_stdout)
+Test(revstr, test_alphabet)
 {
     char str[] = "abcdefghijklmnopqrstuvwxyz";
 
@@ -54,7 +48,7 @@ Test(revstr, test_alphabet, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "zyxwvutsrqponmlkjihgfedcba", "Expected: zyxwvutsrqponmlkjihgfedcba\nGot: %s\n", str);
 }
 
-Test(revstr, test_with_metacharacters, .init = redirect_all_stdout)
+Test(revstr, test_with_metacharacters)
 {
     char str[] = "Hello\tWorld!\n";
 
@@ -62,7 +56,7 @@ Test(revstr, test_with_metacharacters, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "\n!dlroW\tolleH", "Expected: \n!dlroW olleH\nGot: %s\n", str);
 }
 
-Test(revstr, test_with_numbers, .init = redirect_all_stdout)
+Test(revstr, test_with_numbers)
 {
     char str[] = "0123456789";
 
@@ -70,7 +64,7 @@ Test(revstr, test_with_numbers, .init = redirect_all_stdout)
     cr_assert_str_eq(str, "9876543210", "Expected: 9876543210\nGot: %s\n", str);
 }
 
-Test(revstr, test_null, .init = redirect_all_stdout)
+Test(revstr, test_null)
 {
     char *str = NULL;
 
@@ -78,7 +72,7 @@ Test(revstr, test_null, .init = redirect_all_stdout)
     cr_assert_null(str, "Expected: NULL\nGot: %p\n", str);
 }
 
-Test(revstr, test_return_value, .init = redirect_all_stdout)
+Test(revstr, test_return_value)
 {
     char str[] = "Hello World!";
 

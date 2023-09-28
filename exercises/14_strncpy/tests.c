@@ -8,13 +8,7 @@
 
 char *my_strncpy(char *dest, char const *src, unsigned int n);
 
-void redirect_all_stdout(void)
-{
-    cr_redirect_stdout();
-    cr_redirect_stderr();
-}
-
-Test(strncpy, test_hello, .init = redirect_all_stdout)
+Test(strncpy, test_hello)
 {
     char dest[6] = {0};
 
@@ -22,7 +16,7 @@ Test(strncpy, test_hello, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "Hello", "dest is \"%s\" instead of \"Hello\"", dest);
 }
 
-Test(strncpy, test_world, .init = redirect_all_stdout)
+Test(strncpy, test_world)
 {
     char dest[6] = {0};
 
@@ -30,7 +24,7 @@ Test(strncpy, test_world, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "World", "dest is \"%s\" instead of \"World\"", dest);
 }
 
-Test(strncpy, test_overwrite, .init = redirect_all_stdout)
+Test(strncpy, test_overwrite)
 {
     char dest[6] = {0};
 
@@ -39,7 +33,7 @@ Test(strncpy, test_overwrite, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "Worlo", "dest is \"%s\" instead of \"Worlo\"", dest);
 }
 
-Test(strncpy, test_overflow, .init = redirect_all_stdout)
+Test(strncpy, test_overflow)
 {
     char dest[6] = {0};
 
@@ -47,7 +41,7 @@ Test(strncpy, test_overflow, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "Overf", "dest is \"%s\" instead of \"Overf\"", dest);
 }
 
-Test(strncpy, test_empty, .init = redirect_all_stdout)
+Test(strncpy, test_empty)
 {
     char dest[6] = {0};
 
@@ -55,7 +49,7 @@ Test(strncpy, test_empty, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "", "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_null, .init = redirect_all_stdout)
+Test(strncpy, test_null)
 {
     char dest[6] = {0};
 
@@ -63,7 +57,7 @@ Test(strncpy, test_null, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "", "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_n, .init = redirect_all_stdout)
+Test(strncpy, test_n)
 {
     char dest[6] = {0};
 
@@ -71,7 +65,7 @@ Test(strncpy, test_n, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "Hel", "dest is \"%s\" instead of \"Hel\"", dest);
 }
 
-Test(strncpy, test_n_overflow, .init = redirect_all_stdout)
+Test(strncpy, test_n_overflow)
 {
     char dest[6] = {0};
 
@@ -79,7 +73,7 @@ Test(strncpy, test_n_overflow, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "Hello", "dest is \"%s\" instead of \"Hello\"", dest);
 }
 
-Test(strncpy, test_n_0, .init = redirect_all_stdout)
+Test(strncpy, test_n_0)
 {
     char dest[6] = {0};
 
@@ -87,7 +81,7 @@ Test(strncpy, test_n_0, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "", "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_n_null, .init = redirect_all_stdout)
+Test(strncpy, test_n_null)
 {
     char dest[6] = {0};
 
@@ -95,7 +89,7 @@ Test(strncpy, test_n_null, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "", "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_n_null_src, .init = redirect_all_stdout)
+Test(strncpy, test_n_null_src)
 {
     char dest[6] = {0};
 
@@ -103,7 +97,7 @@ Test(strncpy, test_n_null_src, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, "", "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_n_null_dest, .init = redirect_all_stdout)
+Test(strncpy, test_n_null_dest)
 {
     char *dest = NULL;
 
@@ -111,7 +105,7 @@ Test(strncpy, test_n_null_dest, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, NULL, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_n_null_both, .init = redirect_all_stdout)
+Test(strncpy, test_n_null_both)
 {
     char *dest = NULL;
 
@@ -119,70 +113,70 @@ Test(strncpy, test_n_null_both, .init = redirect_all_stdout)
     cr_assert_str_eq(dest, NULL, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return, .init = redirect_all_stdout)
+Test(strncpy, test_return)
 {
     char dest[6] = {0};
 
     cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of \"Hello\"", dest);
 }
 
-Test(strncpy, test_return_null, .init = redirect_all_stdout)
+Test(strncpy, test_return_null)
 {
     char *dest = NULL;
 
     cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return_null_src, .init = redirect_all_stdout)
+Test(strncpy, test_return_null_src)
 {
     char dest[6] = {0};
 
     cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return_null_both, .init = redirect_all_stdout)
+Test(strncpy, test_return_null_both)
 {
     char *dest = NULL;
 
     cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return_n, .init = redirect_all_stdout)
+Test(strncpy, test_return_n)
 {
     char dest[6] = {0};
 
     cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of \"Hello\"", dest);
 }
 
-Test(strncpy, test_return_n_null, .init = redirect_all_stdout)
+Test(strncpy, test_return_n_null)
 {
     char *dest = NULL;
 
     cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return_n_null_src, .init = redirect_all_stdout)
+Test(strncpy, test_return_n_null_src)
 {
     char dest[6] = {0};
 
     cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return_n_null_both, .init = redirect_all_stdout)
+Test(strncpy, test_return_n_null_both)
 {
     char *dest = NULL;
 
     cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
 
-Test(strncpy, test_return_n_0, .init = redirect_all_stdout)
+Test(strncpy, test_return_n_0)
 {
     char dest[6] = {0};
 
     cr_assert_eq(my_strncpy(dest, "Hello", 0), dest, "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_return_n_0_null, .init = redirect_all_stdout)
+Test(strncpy, test_return_n_0_null)
 {
     char *dest = NULL;
 
