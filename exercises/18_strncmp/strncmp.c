@@ -16,7 +16,7 @@
  * @param n The maximal number of characters to compare
  * @return int The difference between the two strings
  */
-int my_strncmp(char const *s1, char const *s2, int n)
+int my_strncmp(char const *s1, char const *s2, unsigned int n)
 {
     return 0;
 }

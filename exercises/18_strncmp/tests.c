@@ -6,7 +6,7 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 
-int my_strncmp(char const *s1, char const *s2, int n);
+int my_strncmp(char const *s1, char const *s2, unsigned int n);
 
 Test(strncmp, test_1)
 {
