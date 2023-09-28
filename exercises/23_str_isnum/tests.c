@@ -4,7 +4,6 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 bool my_str_isnum(const char *str);
 

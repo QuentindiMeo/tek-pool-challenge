@@ -4,7 +4,6 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 void my_swap(int *a, int *b);
 

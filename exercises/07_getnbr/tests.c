@@ -4,7 +4,6 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 int my_getnbr(char const *str);
 

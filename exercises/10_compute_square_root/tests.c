@@ -4,7 +4,6 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 unsigned int my_compute_square_root(unsigned int nb);
 

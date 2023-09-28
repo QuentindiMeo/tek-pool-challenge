@@ -4,7 +4,6 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 char *my_strncpy(char *dest, char const *src, unsigned int n);
 

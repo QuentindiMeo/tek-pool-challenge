@@ -4,15 +4,8 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 int my_strcmp(char const *s1, char const *s2);
-
-void redirect_all_stdout(void)
-{
-    cr_redirect_stdout();
-    cr_redirect_stderr();
-}
 
 Test(strcmp, test_hello_world)
 {

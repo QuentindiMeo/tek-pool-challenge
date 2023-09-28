@@ -4,7 +4,6 @@
 */
 
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 
 unsigned int my_find_prime_sup(unsigned int nb);
 
