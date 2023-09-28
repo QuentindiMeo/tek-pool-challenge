@@ -35,6 +35,12 @@ test:
 	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
 
 run:	test
-	@./$(TESTNAME)
+	@./$(TESTNAME) --verbose
 
-.PHONY: all clean fclean re test run
+runc: test
+	@gcovr --exclude */tests.c --exclude-unreachable-branches --sort-percentage --print-summary
+
+norm:
+	@ruby normono.rb
+
+.PHONY: all clean fclean re test run runc norm

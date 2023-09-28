@@ -5,7 +5,15 @@
 
 *.bin
 
+############
+
 *.vg*
 *.ls*
 
-superbackup/
+############
+
+*.log
+*.html
+*.out
+*.err
+00_sample

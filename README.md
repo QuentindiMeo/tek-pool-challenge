@@ -31,7 +31,7 @@ Criterion tests for each exercise are run with the command `make run`.
 ## Exercises
 
 The 30 exercises are located in `/exercises/`, ready to code with (fake) headers and expectations are listed as comments.  
-The exercises are to be completed with most library functions prohibited; specification are listed above each prototype.  
+The exercises are to be completed with most library functions prohibited; specification are listed above each prototype. Needed includes are already in the headers.  
 You may notice that the exercises are not all equal in difficulty, so you may want to practice them individually before attempting a full run.
 
 ---

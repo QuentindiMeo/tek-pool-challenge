@@ -25,9 +25,13 @@ I may also suggest difficulty modifiers:
     - **nS**: No Stack. Complete the exercises without using the stack (no local variables, no recursion, etc.).
     - **nL**: No Loop. Complete the exercises without using any loop (no `for`, `while`, `do`). Full recursion mode.
   - **nV**: No Valgrind. Complete the exercises without any help from Valgrind.
-  - **full coverage**: Complete the exercises while getting a perfect coverage score (100%). Run `make cov` to check your coverage using `gcov`.
+  - **full coverage**: Complete the exercises while getting a perfect coverage score (100%). Run `make runc` to run with checking your coverage using `gcovr`.
 
 - Difficulty reducers:
   - **nO**: No Order. Complete the exercises in any order you want.
   - **nM**: No Music. Complete the exercises without any music. Full ASMR mode.
   - **nT**: No Timer. Complete the exercises without any timer. Full Zen mode. But if you're not using a timer, you're not speedrunning, are you?
+
+You may **open an issue** if my script is not working properly.  
+You may **open an issue** if you want to suggest a new type of run.  
+You may **open an issue** if you want to suggest a new difficulty modifier.
