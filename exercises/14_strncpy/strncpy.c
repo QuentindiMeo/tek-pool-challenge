@@ -4,8 +4,12 @@
 */
 
 /* ALLOWED FUNCTIONS: none */
-/* PRO TIPS: read `man strcpy`, 
-    dest is assumed to have enough memory to hold n characters */
+/* PRO TIPS: read `man strncpy`
+ * dest is assumed to have enough memory to hold n characters;
+ * Add '\0's if n is strictly greater than the length of the string. Do not
+ * add '\0' if nis strictly lower than the length of the string (because dest
+ * is not supposed to contain more than n bytes.
+ */
 
 #include <stddef.h>
 

@@ -6,6 +6,7 @@ This is a challenge based on the EPITECH Pool, inspired by its 2018 C version.
 
 All the exercises are verified through Makefile compilation (`make`).  
 Pass all the Criterion tests to succeed on each exercise.  
+You may **open an issue** if a Criterion script doesn't seem to be working properly.  
 The final Makefile, located in `/`, executes (and if they all pass, verifies) all the exercises at once.
 
 ---

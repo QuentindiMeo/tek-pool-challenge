@@ -4,15 +4,15 @@ So you're up for a challenge, huh?
 
 Tools like [LiveSplit](https://github.com/LiveSplit) can help you monitor your progress.  
 Find in this folder a [splits file](./challenge.lss) for LiveSplit, as well as a [suggested layout](./challenge.lsl) for the timer.  
-You may note that my personal favourite type of run is the **200% nWAVICO full coverage**.
+You may note that my personal favourite type of run is the **111% nWAVICO full coverage**.
 
 ---
 
 I may suggest various types of runs:
 
-- **Any%**: Complete all the exercises as fast as possible, using any means necessary.
+- **Any%**: Complete all the exercises as fast as possible, using any means necessary (no peer programming allowed).
 - **101%**: ^, but also while getting a perfect Valgrind score (no memory leaks, no errors).
-- **200%**: ^, but also while respecting the [EPITECH coding style]. Use `make norm` to check your code using my Ruby script.
+- **111%**: ^, but also while respecting the [EPITECH coding style]. Use `make norm` to check your code using my Ruby script.
 
 I may also suggest difficulty modifiers:
 
@@ -32,6 +32,6 @@ I may also suggest difficulty modifiers:
   - **nM**: No Music. Complete the exercises without any music. Full ASMR mode.
   - **nT**: No Timer. Complete the exercises without any timer. Full Zen mode. But if you're not using a timer, you're not speedrunning, are you?
 
-You may **open an issue** if my script is not working properly.  
+You may **open an issue** if my norm script is not working properly.  
 You may **open an issue** if you want to suggest a new type of run.  
 You may **open an issue** if you want to suggest a new difficulty modifier.

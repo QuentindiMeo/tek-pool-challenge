@@ -4,6 +4,7 @@
 */
 
 /* ALLOWED FUNCTIONS: none */
+/* PRO TIPS: Check out the my_strcmp and my_strncmp functions. */
 
 #include <stddef.h>
 
