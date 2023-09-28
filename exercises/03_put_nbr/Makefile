@@ -1,23 +1,23 @@
 ##
 ## EPITECH POOL CHALLENGE, 2023
-## general makefile
+## my_put_nbr makefile
 ##
 
-SRC	=	$(shell find . -name "*.c" ! -path "*test*.c")
+SRC	=	put_nbr.c
+
 OBJ	=	$(SRC:.c=.o)
 COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
 
-NAME	=	superlib.a
-
-TESTNAME=	SUPERtest.bin
-TESTFILE=	supertests.c
+NAME	=	put_nbr.bin
+TESTNAME=	test.bin
+TESTFILE=	tests.c
 CRITERIONPATH=	../../criterion/
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@gcc -c $(SRC) -g3
-	@echo "Library compiled successfully"
+	@gcc -o $(NAME) $(SRC) -g3
+	@echo "$(NAME) compiled successfully"
 
 clean:
 	@rm -f $(OBJ)
@@ -36,11 +36,7 @@ test:
 
 run:	test
 	@./$(TESTNAME) --verbose
+runc:	run
+	@gcovr --exclude tests.c --exclude-unreachable-branches --sort-uncovered --print-summary
 
-runc: test
-	@gcovr --exclude */tests.c --exclude-unreachable-branches --sort-percentage --print-summary
-
-norm:
-	@ruby normono.rb
-
-.PHONY: all clean fclean re test run runc norm
+.PHONY: all clean fclean re test run runc
