@@ -4,8 +4,9 @@
 ##
 
 SRC	=	strncat.c
+SIDE	=	../06_strlen/strlen.c
 
-OBJ	=	$(SRC:.c=.o)
+OBJ	=	$(SRC:.c=.o) $(SIDE:.c=.o)
 COV	=	./*.gcda ./*.gcno
 
 NAME	=	strncat.bin
@@ -32,7 +33,7 @@ fclean: clean
 re:	fclean all
 
 test:
-	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) $(SIDE) \
+	@gcc -fprofile-arcs -ftest-coverage -w -o $(TESTNAME) $(TESTFILE) $(SRC) $(SIDE) \
 		-g3 -I$(CRITOPATH)include -L$(CRITOPATH)lib -lcriterion -lm
 
 run:	fclean test

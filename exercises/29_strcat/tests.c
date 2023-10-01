@@ -49,7 +49,7 @@ Test(strcat, null_dest)
     char const *src = "Hello World";
 
     my_strcat(dest, src);
-    cr_assert_str_eq(dest, NULL, "Expected %s to be %s", dest, NULL);
+    cr_assert_eq(dest, NULL, "Expected %s to be %s", dest, NULL);
 }
 
 Test(strcat, null_src)
@@ -67,7 +67,7 @@ Test(strcat, null_strings)
     char const *src = NULL;
 
     my_strcat(dest, src);
-    cr_assert_str_eq(dest, NULL, "Expected %s to be %s", dest, NULL);
+    cr_assert_eq(dest, NULL, "Expected %s to be %s", dest, NULL);
 }
 
 Test(strcat, return_value)

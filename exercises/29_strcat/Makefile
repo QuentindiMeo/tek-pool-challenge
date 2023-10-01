@@ -33,7 +33,7 @@ fclean: clean
 re:	fclean all
 
 test:
-	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) $(SIDE) \
+	@gcc -fprofile-arcs -ftest-coverage -w -o $(TESTNAME) $(TESTFILE) $(SRC) $(SIDE) \
 		-g3 -I$(CRITOPATH)include -L$(CRITOPATH)lib -lcriterion -lm
 
 run:	fclean test

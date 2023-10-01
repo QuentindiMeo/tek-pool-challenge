@@ -3,10 +3,12 @@
 ** strcat
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 /* PRO TIPS: read `man strcat` */
 
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Concatenates two strings
