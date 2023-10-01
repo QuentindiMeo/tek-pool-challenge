@@ -16,7 +16,5 @@
  */
 int my_putchar(char c)
 {
-    if (c == '\0')
-        return 0;
-    return write(1, &c, 1);
+    return 0;
 }

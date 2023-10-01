@@ -3,7 +3,7 @@
 ** showmem
 */
 
-/* ALLOWED FUNCTIONS: write */
+/* ALLOWED FUNCTIONS: write, my_strlen */
 /* DESCRIPTION: Each line of the output manages 16 characters
     and is divided into three columns:
     • The hexadecimal address of the line’s first character,
@@ -17,6 +17,10 @@
     if there aren’t enough characters to have a valid alignment. */
 
 #include <unistd.h>
+
+unsigned int my_strlen(char const *str);
+int my_putchar(char c);
+int my_putstr(char const *str);
 
 /**
  * @brief Displays the characters of a string
