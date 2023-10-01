@@ -13,12 +13,12 @@
  * @param str The string whose length is to be found
  * @return int The length of the string
  */
-int my_strlen(char const *str)
+unsigned int my_strlen(char const *str)
 {
     if (str == NULL)
         return 0;
-    int i = 0;
-    while (str[i] != '\0')
-        i++;
-    return i;
+    for (int i = 0; ; i++)
+        if (str[i] == '\0')
+            return i;
+    return 0;
 }

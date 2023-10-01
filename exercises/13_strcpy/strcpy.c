@@ -3,10 +3,12 @@
 ** strcpy
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 /* PRO TIPS: read `man strcpy` */
 
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Copy a string into another

@@ -63,12 +63,12 @@ Test(strcapitalize, multiple_words)
     cr_assert_str_eq(s, "Hello World! How Are You?", "Expected: \"Hello World! How Are You?\"\nGot: %s\n", s);
 }
 
-Test(strcapitalize, non_printable)
+Test(strcapitalize, with_tab)
 {
-    char str[] = "Hello\tworld!\n";
+    char str[] = "Hello\tworld!";
     char *s = my_strcapitalize(str);
 
-    cr_assert_str_eq(s, "Hello\tWorld!\n", "Expected: \"Hello\tWorld!\n\"\nGot: %s\n", s);
+    cr_assert_str_eq(s, "Hello\tWorld!", "Expected: \"Hello\tWorld!\"\nGot: %s\n", s);
 }
 
 Test(strcapitalize, use_case)

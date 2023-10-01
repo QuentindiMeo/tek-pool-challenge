@@ -3,7 +3,7 @@
 ** strncpy
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 /* PRO TIPS: read `man strncpy`
  * dest is assumed to have enough memory to hold n characters;
  * Add '\0's if n is strictly greater than the length of the string. Do not
@@ -12,6 +12,8 @@
  */
 
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Copy a given number of characters from a string to another

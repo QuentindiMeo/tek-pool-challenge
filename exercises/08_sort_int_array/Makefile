@@ -6,7 +6,7 @@
 SRC	=	sort_int_array.c
 
 OBJ	=	$(SRC:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+COV	=	./*.gcda ./*.gcno
 
 NAME	=	sort_int_array.bin
 TESTNAME=	test.bin

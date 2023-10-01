@@ -79,9 +79,9 @@ Test(compute_square_root, test_82, .timeout = 2)
     cr_assert_eq(result, 0, "Expected 0, got %d", result);
 }
 
-Test(compute_square_root, test_9981, .timeout = 2)
+Test(compute_square_root, test_9801, .timeout = 2)
 {
-    int result = my_compute_square_root(9981);
+    int result = my_compute_square_root(9801);
     cr_assert_eq(result, 99, "Expected 99, got %d", result);
 }
 

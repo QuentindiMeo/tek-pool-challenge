@@ -3,9 +3,11 @@
 ** strlowcase
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Takes a string and puts every letter in it in lowercase

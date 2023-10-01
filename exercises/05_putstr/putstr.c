@@ -8,6 +8,8 @@
 
 #include <unistd.h>
 
+int my_putchar(char c);
+
 /**
  * @brief Print a string on stdout, character by character
  *

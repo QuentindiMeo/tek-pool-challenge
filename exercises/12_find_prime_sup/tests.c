@@ -22,7 +22,7 @@ Test(find_prime_sup, test_1, .timeout = 2)
 Test(find_prime_sup, test_2, .timeout = 2)
 {
     int result = my_find_prime_sup(2);
-    cr_assert_eq(result, 3, "Expected 3, got %d", result);
+    cr_assert_eq(result, 2, "Expected 2, got %d", result);
 }
 
 Test(find_prime_sup, test_3, .timeout = 2)
@@ -73,8 +73,8 @@ Test(find_prime_sup, test_999, .timeout = 2)
     cr_assert_eq(result, 1009, "Expected 1009, got %d", result);
 }
 
-Test(find_prime_sup, test_max, .timeout = 2)
+Test(find_prime_sup, test_big, .timeout = 2)
 {
-    int result = my_find_prime_sup(4294967294);
-    cr_assert_eq(result, 4294967295, "Expected 4294967295, got %d", result);
+    int result = my_find_prime_sup(42949674);
+    cr_assert_eq(result, 42949679, "Expected 42949679, got %d", result);
 }

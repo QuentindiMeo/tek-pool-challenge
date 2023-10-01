@@ -6,7 +6,7 @@
 SRC	=	strcat.c
 
 OBJ	=	$(SRC:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+COV	=	./*.gcda ./*.gcno
 
 NAME	=	strcat.bin
 TESTNAME=	test.bin

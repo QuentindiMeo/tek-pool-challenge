@@ -5,7 +5,7 @@
 
 #include <criterion/criterion.h>
 
-int my_strlen(char const *str);
+unsigned int my_strlen(char const *str);
 
 Test(my_strlen, test_hello_world)
 {

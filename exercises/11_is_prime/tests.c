@@ -5,7 +5,7 @@
 
 #include <criterion/criterion.h>
 
-unsigned int my_is_prime(unsigned int nb);
+bool my_is_prime(unsigned int nb);
 
 Test(is_prime, test_0, .timeout = 2)
 {

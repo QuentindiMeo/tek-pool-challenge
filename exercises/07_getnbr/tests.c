@@ -85,9 +85,9 @@ Test(my_getnbr, test_with_plus)
     cr_assert_eq(result, -42, "Expected -42, got %d", result);
 }
 
-Test(my_getnbr, test_with_spaces)
+Test(my_getnbr, test_with_padding)
 {
-    int result = my_getnbr("  31");
+    int result = my_getnbr(" \n\t 31");
     cr_assert_eq(result, 31, "Expected 31, got %d", result);
 }
 

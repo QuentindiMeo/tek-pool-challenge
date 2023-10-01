@@ -7,13 +7,15 @@
 /* CONSTRAINTS: result under 2 minutes */
 /* PRO TIPS: 0 and 1 are not prime numbers */
 
+#include <stdbool.h>
+
 /**
  * @brief Check if a number is prime
  *
  * @param nb The number to test
- * @return int 1 if the number is prime, 0 otherwise
+ * @return bool Whether the number is prime
  */
-unsigned int my_is_prime(unsigned int nb)
+bool my_is_prime(unsigned int nb)
 {
-    return 0;
+    return false;
 }

@@ -6,7 +6,7 @@
 SRC	=	putchar.c
 
 OBJ	=	$(SRC:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+COV	=	./*.gcda ./*.gcno
 
 NAME	=	putchar.bin
 TESTNAME=	test.bin
@@ -32,7 +32,7 @@ fclean: clean
 re:	fclean all
 
 test:
-	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
+	@gcc -fprofile-arcs -ftest-coverage -w -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
 
 run:	fclean test
 	@./$(TESTNAME) --verbose

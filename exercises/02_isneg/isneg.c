@@ -4,9 +4,10 @@
 */
 
 /* ALLOWED FUNCTIONS: write */
-/* PROHIBITED: arrays, strings */
 
 #include <unistd.h>
+
+char my_putchar(char c);
 
 /**
  * @brief print N if the number is negative, P if positive or null

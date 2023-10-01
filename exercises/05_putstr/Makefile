@@ -4,9 +4,10 @@
 ##
 
 SRC	=	putstr.c
+SIDE	=	../01_putchar/putchar.c
 
-OBJ	=	$(SRC:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+OBJ	=	$(SRC:.c=.o) $(SIDE:.c=.o)
+COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(SIDE:.c.gcda) $(SIDE:.c.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
 
 NAME	=	putstr.bin
 TESTNAME=	test.bin
@@ -16,7 +17,7 @@ CRITERIONPATH=	../../criterion/
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@gcc -o $(NAME) $(SRC) -g3
+	@gcc -o $(NAME) $(SRC) $(SIDE) -g3
 	@echo "$(NAME) compiled successfully"
 
 clean:
@@ -32,7 +33,7 @@ fclean: clean
 re:	fclean all
 
 test:
-	@gcc -fprofile-arcs -ftest-coverage -w -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
+	@gcc -fprofile-arcs -ftest-coverage -w -o $(TESTNAME) $(TESTFILE) $(SRC) $(SIDE) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
 
 run:	fclean test
 	@./$(TESTNAME) --verbose

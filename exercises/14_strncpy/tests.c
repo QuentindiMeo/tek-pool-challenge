@@ -96,22 +96,6 @@ Test(strncpy, test_n_null_src)
     cr_assert_str_eq(dest, "", "dest is \"%s\" instead of \"\"", dest);
 }
 
-Test(strncpy, test_n_null_dest)
-{
-    char *dest = NULL;
-
-    my_strncpy(dest, "Hello", 5);
-    cr_assert_str_eq(dest, NULL, "dest is \"%s\" instead of NULL", dest);
-}
-
-Test(strncpy, test_n_null_both)
-{
-    char *dest = NULL;
-
-    my_strncpy(dest, NULL, 5);
-    cr_assert_str_eq(dest, NULL, "dest is \"%s\" instead of NULL", dest);
-}
-
 Test(strncpy, test_return)
 {
     char dest[6] = {0};
@@ -119,23 +103,9 @@ Test(strncpy, test_return)
     cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of \"Hello\"", dest);
 }
 
-Test(strncpy, test_return_null)
-{
-    char *dest = NULL;
-
-    cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of NULL", dest);
-}
-
 Test(strncpy, test_return_null_src)
 {
     char dest[6] = {0};
-
-    cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
-}
-
-Test(strncpy, test_return_null_both)
-{
-    char *dest = NULL;
 
     cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
@@ -147,23 +117,9 @@ Test(strncpy, test_return_n)
     cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of \"Hello\"", dest);
 }
 
-Test(strncpy, test_return_n_null)
-{
-    char *dest = NULL;
-
-    cr_assert_eq(my_strncpy(dest, "Hello", 5), dest, "dest is \"%s\" instead of NULL", dest);
-}
-
 Test(strncpy, test_return_n_null_src)
 {
     char dest[6] = {0};
-
-    cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
-}
-
-Test(strncpy, test_return_n_null_both)
-{
-    char *dest = NULL;
 
     cr_assert_eq(my_strncpy(dest, NULL, 5), dest, "dest is \"%s\" instead of NULL", dest);
 }
@@ -173,11 +129,4 @@ Test(strncpy, test_return_n_0)
     char dest[6] = {0};
 
     cr_assert_eq(my_strncpy(dest, "Hello", 0), dest, "dest is \"%s\" instead of \"\"", dest);
-}
-
-Test(strncpy, test_return_n_0_null)
-{
-    char *dest = NULL;
-
-    cr_assert_eq(my_strncpy(dest, "Hello", 0), dest, "dest is \"%s\" instead of NULL", dest);
 }

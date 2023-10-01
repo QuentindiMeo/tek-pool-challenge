@@ -3,11 +3,13 @@
 ** strcapitalize
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 /* PRO TIPS: The sentence, "hey, how are you? 42WORds forty-two; fifty+one"
     will become "Hey, How Are You? 42words Forty-Two; Fifty+One" */
 
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Takes a string and capitalizes the first letter of every word

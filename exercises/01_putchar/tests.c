@@ -6,7 +6,7 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 
-int my_putstr(char const *str);
+int my_putchar(char c);
 
 void redirect_all_stdout(void)
 {

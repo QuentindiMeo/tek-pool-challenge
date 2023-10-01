@@ -6,7 +6,7 @@
 SRC	=	compute_square_root.c
 
 OBJ	=	$(SRC:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+COV	=	./*.gcda ./*.gcno
 
 NAME	=	compute_square_root.bin
 TESTNAME=	test.bin

@@ -8,6 +8,8 @@
 
 #include <unistd.h>
 
+char my_putchar(char c);
+
 /**
  * @brief print an integer on stdout
  *

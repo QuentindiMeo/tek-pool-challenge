@@ -3,10 +3,12 @@
 ** str_islower
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 
 #include <stdbool.h>
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Check if a string only contains lowercase alphabetical characters

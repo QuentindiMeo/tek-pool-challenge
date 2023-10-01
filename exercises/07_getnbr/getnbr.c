@@ -3,9 +3,11 @@
 ** getnbr
 */
 
-/* ALLOWED FUNCTIONS: none */
+/* ALLOWED FUNCTIONS: my_strlen */
 
 #include <stddef.h>
+
+unsigned int my_strlen(char const *str);
 
 /**
  * @brief Convert a string to an integer

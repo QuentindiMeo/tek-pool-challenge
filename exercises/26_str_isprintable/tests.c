@@ -72,7 +72,7 @@ Test(str_isprintable, null)
 
 Test(str_isprintable, non_printable)
 {
-    bool ret = my_str_isprintable("\x00\x01\x02\x03\x04");
+    bool ret = my_str_isprintable("\x01\x02\x03\x04\x00");
 
     cr_assert_eq(ret, false, "Expected %d to be %d", ret, false);
 }
