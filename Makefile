@@ -5,13 +5,13 @@
 
 SRC	=	$(shell find . -name "*.c" ! -path "*test*.c")
 OBJ	=	$(SRC:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+COV	=	./*.gcda ./*.gcno
 
 NAME	=	superlib.a
 
 TESTNAME=	SUPERtest.bin
 TESTFILE=	supertests.c
-CRITERIONPATH=	../../criterion/
+CRITOPATH=	../../criterion/
 
 all:	$(NAME)
 
@@ -32,7 +32,7 @@ fclean: clean
 re:	fclean all
 
 test:
-	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITERIONPATH)include -L$(CRITERIONPATH)lib -lcriterion -lm
+	@gcc -fprofile-arcs -ftest-coverage -o $(TESTNAME) $(TESTFILE) $(SRC) -g3 -I$(CRITOPATH)include -L$(CRITOPATH)lib -lcriterion -lm
 
 run:	fclean test
 	@./$(TESTNAME) --verbose

@@ -7,7 +7,7 @@ SRC	=	putstr.c
 SIDE	=	../01_putchar/putchar.c
 
 OBJ	=	$(SRC:.c=.o) $(SIDE:.c=.o)
-COV	=	$(SRC:.c=.gcda) $(SRC:.c=.gcno) $(SIDE:.c.gcda) $(SIDE:.c.gcno) $(TESTFILE:.c=.gcda) $(TESTFILE:.c=.gcno)
+COV	=	*.gcda *.gcno *.gcov
 
 NAME	=	putstr.bin
 TESTNAME=	test.bin
