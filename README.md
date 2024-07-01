@@ -23,7 +23,7 @@ The final Makefile, located in `/`, executes (and if they all pass, verifies) al
 - A terminal (Bash, Zsh, etc.)
 - A brain (optional)
 
-A [static Criterion install](https://github.com/Snaipe/Criterion) is located in `/criterion/`.  
+A [static Criterion 2.4.2 install](https://github.com/Snaipe/Criterion) is located in `/criterion/`.  
 **Please open an issue if it results in the impossibility to compile/run the tests.**  
 Criterion tests for each exercise are run with the command `make run`.  
 
@@ -33,7 +33,8 @@ Criterion tests for each exercise are run with the command `make run`.
 
 The 30 exercises are located in `/exercises/`, ready to code with (fake) headers and expectations are listed as comments.  
 The exercises are to be completed with most library functions prohibited; specification are listed above each prototype.
-Needed includes are already in the headers. You may **open an issue** if some of them are missing.
+Needed includes are already in the headers. You may **open an issue** if some of them are missing.  
+You may note that some exercises depend on some others, so you may want to do them in order.
 
 ---
 
