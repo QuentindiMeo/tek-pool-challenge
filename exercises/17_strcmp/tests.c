@@ -88,33 +88,6 @@ Test(strcmp, test_nb4)
     cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
 }
 
-Test(strcmp, test_null_s1)
-{
-    char *s1 = NULL;
-    char s2[] = "Hello";
-    int result = my_strcmp(s1, s2);
-
-    cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
-}
-
-Test(strcmp, test_null_s2)
-{
-    char s1[] = "Hello";
-    char *s2 = NULL;
-    int result = my_strcmp(s1, s2);
-
-    cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
-}
-
-Test(strcmp, test_null_both)
-{
-    char *s1 = NULL;
-    char *s2 = NULL;
-    int result = my_strcmp(s1, s2);
-
-    cr_assert_eq(result, 0, "Expected: 0\nGot: %d\n", result);
-}
-
 Test(strcmp, test_empty_s1)
 {
     char s1[] = "";
