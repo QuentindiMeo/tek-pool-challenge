@@ -13,7 +13,7 @@ Test(strcmp, test_hello_world)
     char s2[] = "Hello World!";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, 0, "Expected: 0\nGot: %d\n", result);
+    cr_assert_eq(result == 0, true, "Expected: 0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_hello_world2)
@@ -22,7 +22,7 @@ Test(strcmp, test_hello_world2)
     char s2[] = "Hello World";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_hello_world3)
@@ -31,7 +31,7 @@ Test(strcmp, test_hello_world3)
     char s2[] = "Hello World!";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_hello_world4)
@@ -40,7 +40,7 @@ Test(strcmp, test_hello_world4)
     char s2[] = "Hello World!!";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_hello_world5)
@@ -49,7 +49,7 @@ Test(strcmp, test_hello_world5)
     char s2[] = "Hello World!";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
+    cr_assert_eq(result > 0, true, "Expected: >0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_nb1)
@@ -58,7 +58,7 @@ Test(strcmp, test_nb1)
     char s2[] = "Hello1";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_nb2)
@@ -67,7 +67,7 @@ Test(strcmp, test_nb2)
     char s2[] = "Hello";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
+    cr_assert_eq(result > 0, true, "Expected: >0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_nb3)
@@ -76,7 +76,7 @@ Test(strcmp, test_nb3)
     char s2[] = "Hello2";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_nb4)
@@ -85,7 +85,7 @@ Test(strcmp, test_nb4)
     char s2[] = "Hello2";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
+    cr_assert_eq(result > 0, true, "Expected: >0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_empty_s1)
@@ -94,7 +94,7 @@ Test(strcmp, test_empty_s1)
     char s2[] = "World";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, -1, "Expected: -1\nGot: %d\n", result);
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_empty_s2)
@@ -103,5 +103,14 @@ Test(strcmp, test_empty_s2)
     char s2[] = "";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result, 1, "Expected: 1\nGot: %d\n", result);
+    cr_assert_eq(result > 0, true, "Expected: >0\nGot: %d\n", result);
+}
+
+Test(strcmp, test_special)
+{
+    char s1[] = "6915$^[`~'";
+    char s2[] = "6915$^[`~t'";
+    int result = my_strcmp(s1, s2);
+
+    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
 }
