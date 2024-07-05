@@ -1,56 +1,45 @@
 ##
 ## EPITECH POOL CHALLENGE, 2023
-## general makefile
+## shared makefile
 ##
 
 .SUFFIXES: .o
 
-SRC := $(shell find . -name "*.c")
-OBJ := $(SRC:.c=.o)
+OBJ	= $(SRC:.c=.o)
 
 COV = $(wildcard *.gc??)
 
-NAME := superlib.a
-TESTNAME := test.bin
+TESTNAME = test.bin
+TESTFILE = tests.c
 
-CRITOPATH := ./criterion
+CRITOPATH := ../../criterion
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	@ $(AR) rc $@ $^
-	@ echo "Library compiled successfully"
+all: $(TESTNAME)
 
 clean:
 	@ $(RM) $(OBJ)
 	@ echo "Cleaned .o"
 
 fclean: clean
-	@ $(RM) $(NAME)
-	@ echo "Cleaned '$(NAME)'"
 	@ $(RM) $(TESTNAME) $(COV)
 	@ echo "Cleaned '$(TESTNAME)' binary & residual files"
 
 .NOTPARALLEL: re
-re: fclean all
+re:	fclean all
 
 $(TESTNAME): $(OBJ)
 	@ gcc -o $(TESTNAME) $(OBJ)                     \
-		-fprofile-arcs -ftest-coverage -g3          \
+		-fprofile-arcs -ftest-coverage -w -g3       \
 		-I $(CRITOPATH)/include -L $(CRITOPATH)/lib \
 		-lcriterion
 
-.NOTPARALLEL: run
-run: fclean $(TESTNAME)
+run: $(TESTNAME)
 	@ ./$(TESTNAME) --verbose
 
 runc: run
-	@ gcovr --exclude $(wildcard */tests.c) \
+	@ gcovr --exclude tests.c               \
 		--exclude-unreachable-branches      \
 		--sort-percentage                   \
 		--print-summary
 
-norm:
-	@ ruby normono.rb
-
-.PHONY: all clean fclean re run runc norm
+.PHONY: all clean fclean re test run runc
