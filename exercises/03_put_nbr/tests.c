@@ -7,53 +7,54 @@
 #include <criterion/redirect.h>
 
 int my_put_nbr(int nb);
+void assert_match_stdout(char const *expected);
 
 Test(my_put_nbr, should_print_42, .init = cr_redirect_stdout)
 {
     my_put_nbr(42);
-    cr_assert_stdout_eq_str("42", "Expected \"42\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("42");
 }
 
 Test(my_put_nbr, should_print_0, .init = cr_redirect_stdout)
 {
     my_put_nbr(0);
-    cr_assert_stdout_eq_str("0", "Expected \"0\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("0");
 }
 
 Test(my_put_nbr, should_print_1, .init = cr_redirect_stdout)
 {
     my_put_nbr(1);
-    cr_assert_stdout_eq_str("1", "Expected \"1\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("1");
 }
 
 Test(my_put_nbr, should_print_10, .init = cr_redirect_stdout)
 {
     my_put_nbr(10);
-    cr_assert_stdout_eq_str("10", "Expected \"10\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("10");
 }
 
 Test(my_put_nbr, should_print_100, .init = cr_redirect_stdout)
 {
     my_put_nbr(100);
-    cr_assert_stdout_eq_str("100", "Expected \"100\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("100");
 }
 
 Test(my_put_nbr, should_print_2147483647, .init = cr_redirect_stdout)
 {
     my_put_nbr(2147483647);
-    cr_assert_stdout_eq_str("2147483647", "Expected \"2147483647\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("2147483647");
 }
 
 Test(my_put_nbr, should_print_2147483648, .init = cr_redirect_stdout)
 {
     my_put_nbr(-2147483648);
-    cr_assert_stdout_eq_str("-2147483648", "Expected \"-2147483648\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("-2147483648");
 }
 
 Test(my_put_nbr, should_print_2147483649, .init = cr_redirect_stdout)
 {
     my_put_nbr(-1);
-    cr_assert_stdout_eq_str("-1", "Expected \"-1\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("-1");
 }
 
 Test(my_put_nbr, return_value, .init = cr_redirect_stdout)

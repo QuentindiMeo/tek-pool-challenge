@@ -7,18 +7,19 @@
 #include <criterion/redirect.h>
 
 int my_putchar(char c);
+void assert_match_stdout(char const *expected);
 
 Test(my_putchar, test_one, .init = cr_redirect_stdout)
 {
     my_putchar('a');
-    cr_assert_stdout_eq_str("a", "Expected \"a\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("a");
 }
 
 Test(my_putchar, test_two, .init = cr_redirect_stdout)
 {
     my_putchar('b');
     my_putchar('c');
-    cr_assert_stdout_eq_str("bc", "Expected \"bc\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("bc");
 }
 
 Test(my_putchar, test_hello_world, .init = cr_redirect_stdout)
@@ -35,20 +36,20 @@ Test(my_putchar, test_hello_world, .init = cr_redirect_stdout)
     my_putchar('l');
     my_putchar('d');
     my_putchar('!');
-    cr_assert_stdout_eq_str("Hello World!", "Expected \"Hello World!\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("Hello World!");
 }
 
 Test(my_putchar, test_empty, .init = cr_redirect_stdout)
 {
     my_putchar('\0');
-    cr_assert_stdout_eq_str("", "Expected \"\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("");
 }
 
 Test(my_putchar, test_metacharacters, .init = cr_redirect_stdout)
 {
     my_putchar('\t');
     my_putchar('\n');
-    cr_assert_stdout_eq_str("\t\n", "Expected \"\\t\\n\", got \"%s\"", cr_redirect_stdout);
+    assert_match_stdout("\t\n");
 }
 
 Test(my_putchar, test_return_value, .init = cr_redirect_stdout)

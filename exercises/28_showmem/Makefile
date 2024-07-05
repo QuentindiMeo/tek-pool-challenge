@@ -5,6 +5,7 @@
 
 SRC	=	showmem.c
 SIDE	=	../01_putchar/putchar.c ../03_put_nbr/put_nbr.c ../05_putstr/putstr.c ../06_strlen/strlen.c
+SIDE += ../assert_match_stdout.c
 
 OBJ	=	$(SRC:.c=.o) $(SIDE:.c=.o)
 COV	=	./*.gcda ./*.gcno
