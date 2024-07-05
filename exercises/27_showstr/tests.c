@@ -12,13 +12,13 @@ void assert_match_stdout(char const *expected);
 Test(showstr, ponies, .init = cr_redirect_stdout)
 {
     my_showstr("I like \n ponies!");
-    assert_match_stdout("I like \0a ponies!");
+    assert_match_stdout("I like \\0a ponies!");
 }
 
 Test(showstr, ponies2, .init = cr_redirect_stdout)
 {
     my_showstr("I like \n ponies!\n");
-    assert_match_stdout("I like \0a ponies!\0a");
+    assert_match_stdout("I like \\0a ponies!\\0a");
 }
 
 Test(showstr, no_meta, .init = cr_redirect_stdout)
@@ -30,7 +30,7 @@ Test(showstr, no_meta, .init = cr_redirect_stdout)
 Test(showstr, full_meta, .init = cr_redirect_stdout)
 {
     my_showstr("\a\b\t!\n\v\f\r!");
-    assert_match_stdout("\07\08\09!\0a\0b\0c\0d!");
+    assert_match_stdout("\\07\\08\\09!\\0a\\0b\\0c\\0d!");
 }
 
 Test(showstr, empty, .init = cr_redirect_stdout)
@@ -48,22 +48,25 @@ Test(showstr, null, .init = cr_redirect_stdout)
 Test(showstr, return_value1, .init = cr_redirect_stdout)
 {
     int ret = my_showstr("I like ponies!");
+    size_t len = strlen("I like ponies!");
 
-    cr_assert_eq(ret, 14, "Expected %d to be %d", ret, 14);
+    cr_assert_eq(ret, len, "Expected %d to be %zu", ret, len);
 }
 
 Test(showstr, return_value2, .init = cr_redirect_stdout)
 {
     int ret = my_showstr("I like \n ponies!");
+    size_t len = strlen("I like \\0a ponies!");
 
-    cr_assert_eq(ret, 16, "Expected %d to be %d", ret, 16);
+    cr_assert_eq(ret, len, "Expected %d to be %zu", ret, len);
 }
 
 Test(showstr, return_value3, .init = cr_redirect_stdout)
 {
     int ret = my_showstr("\a\b\t!\n\v\f\r!");
+    size_t len = strlen("\\07\\08\\09!\\0a\\0b\\0c\\0d!");
 
-    cr_assert_eq(ret, 14, "Expected %d to be %d", ret, 14);
+    cr_assert_eq(ret, len, "Expected %d to be %zu", ret, len);
 }
 
 Test(showstr, return_value_empty, .init = cr_redirect_stdout)

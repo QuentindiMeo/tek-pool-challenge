@@ -22,7 +22,7 @@ Test(strcmp, test_hello_world2)
     char s2[] = "Hello World";
     int result = my_strcmp(s1, s2);
 
-    cr_assert_eq(result < 0, true, "Expected: <0\nGot: %d\n", result);
+    cr_assert_eq(result > 0, true, "Expected: >0\nGot: %d\n", result);
 }
 
 Test(strcmp, test_hello_world3)
