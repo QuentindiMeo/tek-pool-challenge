@@ -8,13 +8,7 @@
 
 int my_showmem(char const *str, int size);
 
-void redirect_all_stdout(void)
-{
-    cr_redirect_stdout();
-    cr_redirect_stderr();
-}
-
-Test(showmem, should_print_16_bytes, .init = redirect_all_stdout)
+Test(showmem, should_print_16_bytes, .init = cr_redirect_stdout)
 {
     char const *str = "hey guys show me";
     int ret = my_showmem(str, 16);
@@ -26,7 +20,7 @@ Test(showmem, should_print_16_bytes, .init = redirect_all_stdout)
     cr_assert_eq(ret, 16, "Expected to write %d bytes, wrote %d", 16, ret);
 }
 
-Test(showmem, should_print_32_bytes, .init = redirect_all_stdout)
+Test(showmem, should_print_32_bytes, .init = cr_redirect_stdout)
 {
     char const *str = "hey guys show me";
     int ret = my_showmem(str, 32);
@@ -39,7 +33,7 @@ Test(showmem, should_print_32_bytes, .init = redirect_all_stdout)
     cr_assert_eq(ret, 32, "Expected to write %d bytes, wrote %d", 32, ret);
 }
 
-Test(showmem, empty_string, .init = redirect_all_stdout)
+Test(showmem, empty_string, .init = cr_redirect_stdout)
 {
     char const *str = "";
     int size = 16;
@@ -49,7 +43,7 @@ Test(showmem, empty_string, .init = redirect_all_stdout)
     cr_assert_eq(ret, 0, "Expected to write %d bytes, wrote %d", 0, ret);
 }
 
-Test(showmem, one_tab, .init = redirect_all_stdout)
+Test(showmem, one_tab, .init = cr_redirect_stdout)
 {
     char const *str = "\t";
     int size = 1;
@@ -61,7 +55,7 @@ Test(showmem, one_tab, .init = redirect_all_stdout)
     cr_assert_eq(ret, 1, "Expected to write %d bytes, wrote %d", 1, ret);
 }
 
-Test(showmem, one_space, .init = redirect_all_stdout)
+Test(showmem, one_space, .init = cr_redirect_stdout)
 {
     char const *str = " ";
     int size = 1;
@@ -73,7 +67,7 @@ Test(showmem, one_space, .init = redirect_all_stdout)
     cr_assert_eq(ret, 1, "Expected to write %d bytes, wrote %d", 1, ret);
 }
 
-Test(showmem, one_newline, .init = redirect_all_stdout)
+Test(showmem, one_newline, .init = cr_redirect_stdout)
 {
     char const *str = "\n";
     int size = 1;
@@ -85,7 +79,7 @@ Test(showmem, one_newline, .init = redirect_all_stdout)
     cr_assert_eq(ret, 1, "Expected to write %d bytes, wrote %d", 1, ret);
 }
 
-Test(showmem, one_m, .init = redirect_all_stdout)
+Test(showmem, one_m, .init = cr_redirect_stdout)
 {
     char const *str = "m";
     int size = 1;
@@ -97,7 +91,7 @@ Test(showmem, one_m, .init = redirect_all_stdout)
     cr_assert_eq(ret, 1, "Expected to write %d bytes, wrote %d", 1, ret);
 }
 
-Test(showmem, hello_world, .init = redirect_all_stdout)
+Test(showmem, hello_world, .init = cr_redirect_stdout)
 {
     char const *str = "Hello World!";
     int size = 12;
@@ -109,7 +103,7 @@ Test(showmem, hello_world, .init = redirect_all_stdout)
     cr_assert_eq(ret, 12, "Expected to write %d bytes, wrote %d", 12, ret);
 }
 
-Test(showmem, hello_world_2, .init = redirect_all_stdout)
+Test(showmem, hello_world_2, .init = cr_redirect_stdout)
 {
     char const *str = "Hello World!";
     int size = 13;
