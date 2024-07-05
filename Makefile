@@ -45,9 +45,10 @@ run: fclean $(TESTNAME)
 	@ ./$(TESTNAME) --verbose
 
 runc: run
-	@ gcovr --exclude $(wildcard */tests.c) \
-		--exclude-unreachable-branches      \
-		--sort-percentage                   \
+	@ gcovr                                       \
+		--exclude $(wildcard exercises/*/tests.c) \
+		--exclude-unreachable-branches            \
+		--sort-key uncovered-percent              \
 		--print-summary
 
 norm:
