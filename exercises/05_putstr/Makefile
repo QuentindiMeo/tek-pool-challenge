@@ -5,6 +5,7 @@
 
 SRC	=	putstr.c
 SIDE	=	../01_putchar/putchar.c
+SIDE += ../assert_match_stdout.c
 
 OBJ	=	$(SRC:.c=.o) $(SIDE:.c=.o)
 COV	=	*.gcda *.gcno *.gcov

@@ -4,6 +4,7 @@
 ##
 
 SRC	=	putchar.c
+SRC += ../assert_match_stdout.c
 
 OBJ	=	$(SRC:.c=.o)
 COV	=	./*.gcda ./*.gcno

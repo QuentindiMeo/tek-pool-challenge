@@ -94,5 +94,5 @@ Test(strncmp, test_compare_0)
     char s2[] = "OAOA";
     int result = my_strncmp(s1, s2, 0);
 
-    cr_assert_eq(result, 11, "Expected: 11\nGot: %d\n", result);
+    cr_assert_eq(result, 0, "Expected: 11\nGot: %d\n", result);
 }
