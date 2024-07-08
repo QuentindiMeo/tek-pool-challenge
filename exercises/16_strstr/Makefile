@@ -3,7 +3,8 @@
 ## strstr makefile
 ##
 
-SRC := strstr.c
-SRC += tests.c
+SRC := \
+	strstr.c \
+	tests.c
 
 include ../shared.mk

@@ -3,7 +3,8 @@
 ## sort_int_array makefile
 ##
 
-SRC := sort_int_array.c
-SRC += tests.c
+SRC := \
+	sort_int_array.c \
+	tests.c
 
 include ../shared.mk

@@ -3,7 +3,8 @@
 ## is_prime makefile
 ##
 
-SRC := is_prime.c
-SRC += tests.c
+SRC := \
+	is_prime.c \
+	tests.c
 
 include ../shared.mk

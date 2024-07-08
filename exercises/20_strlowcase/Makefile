@@ -3,8 +3,9 @@
 ## strlowcase makefile
 ##
 
-SRC := strlowcase.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	strlowcase.c          \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

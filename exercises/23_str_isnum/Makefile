@@ -3,8 +3,9 @@
 ## str_isnum makefile
 ##
 
-SRC := str_isnum.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \ 
+	str_isnum.c           \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

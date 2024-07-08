@@ -3,7 +3,8 @@
 ## swap makefile
 ##
 
-SRC := swap.c
-SRC += tests.c
+SRC := \
+	swap.c  \
+	tests.c \
 
 include ../shared.mk

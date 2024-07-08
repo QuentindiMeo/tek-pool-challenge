@@ -3,9 +3,10 @@
 ## my_put_nbr makefile
 ##
 
-SRC := put_nbr.c
-SRC += ../01_putchar/putchar.c
-SRC += tests.c
-SRC += ../assert_match_stdout.c
+SRC := \
+	put_nbr.c               \
+	../01_putchar/putchar.c \
+	tests.c                 \
+	../assert_match_stdout.c
 
 include ../shared.mk

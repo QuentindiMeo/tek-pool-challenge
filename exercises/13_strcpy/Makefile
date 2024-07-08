@@ -3,8 +3,9 @@
 ## strcpy makefile
 ##
 
-SRC := strcpy.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	strcpy.c              \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

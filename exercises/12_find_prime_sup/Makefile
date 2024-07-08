@@ -3,7 +3,8 @@
 ## find_prime_sup makefile
 ##
 
-SRC := find_prime_sup.c
-SRC += tests.c
+SRC := \
+	find_prime_sup.c \
+	tests.c
 
 include ../shared.mk

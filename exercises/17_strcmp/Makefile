@@ -3,8 +3,9 @@
 ## strcmp makefile
 ##
 
-SRC := strcmp.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	strcmp.c              \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

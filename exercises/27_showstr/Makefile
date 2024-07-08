@@ -3,12 +3,13 @@
 ## showstr makefile
 ##
 
-SRC := showstr.c
-SRC += ../01_putchar/putchar.c
-SRC += ../03_put_nbr/put_nbr.c
-SRC += ../05_putstr/putstr.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
-SRC += ../assert_match_stdout.c
+SRC := \
+	showstr.c               \
+	../01_putchar/putchar.c \
+	../03_put_nbr/put_nbr.c \
+	../05_putstr/putstr.c   \
+	../06_strlen/strlen.c   \
+	tests.c                 \
+	../assert_match_stdout.c
 
 include ../shared.mk

@@ -3,8 +3,9 @@
 ## strncat makefile
 ##
 
-SRC := strncat.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	strncat.c             \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

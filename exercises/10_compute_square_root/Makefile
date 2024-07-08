@@ -3,7 +3,8 @@
 ## compute_square_root makefile
 ##
 
-SRC := compute_square_root.c
-SRC += tests.c
+SRC := \
+	compute_square_root.c \
+	tests.c
 
 include ../shared.mk

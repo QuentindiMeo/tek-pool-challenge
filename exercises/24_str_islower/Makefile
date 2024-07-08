@@ -3,8 +3,9 @@
 ## str_islower makefile
 ##
 
-SRC := str_islower.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	str_islower.c         \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

@@ -3,8 +3,9 @@
 ## getnbr makefile
 ##
 
-SRC := getnbr.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	getnbr.c              \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

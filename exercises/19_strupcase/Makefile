@@ -3,8 +3,9 @@
 ## strupcase makefile
 ##
 
-SRC := strupcase.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	strupcase.c           \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

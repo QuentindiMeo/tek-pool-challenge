@@ -3,8 +3,9 @@
 ## str_isupper makefile
 ##
 
-SRC := str_isupper.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	str_isupper.c         \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

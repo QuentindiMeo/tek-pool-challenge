@@ -3,8 +3,9 @@
 ## revstr makefile
 ##
 
-SRC := revstr.c
-SRC += ../06_strlen/strlen.c
-SRC += tests.c
+SRC := \
+	revstr.c              \
+	../06_strlen/strlen.c \
+	tests.c
 
 include ../shared.mk

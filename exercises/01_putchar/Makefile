@@ -3,8 +3,9 @@
 ## putchar makefile
 ##
 
-SRC := putchar.c
-SRC += tests.c
-SRC += ../assert_match_stdout.c
+SRC := \
+	putchar.c \
+	tests.c   \
+	../assert_match_stdout.c
 
 include ../shared.mk

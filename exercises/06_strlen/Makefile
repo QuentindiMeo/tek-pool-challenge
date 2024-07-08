@@ -3,7 +3,8 @@
 ## strlen makefile
 ##
 
-SRC := strlen.c
-SRC += tests.c
+SRC := \
+	strlen.c \
+	tests.c
 
 include ../shared.mk
